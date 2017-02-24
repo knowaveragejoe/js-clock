@@ -1,0 +1,72 @@
+html {
+  background: #FFF url('../clockface.png');
+  background-size:1
+  font-family:'helvetica neue';
+  text-align: center;
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-size: 2rem;
+  display:flex;
+  flex:1;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.clock-readout {
+  width: 50rem;
+  border: 1px solid black;
+  margin: 0 auto;
+  position: relative;
+}
+
+.number {
+  display: inline;
+  position: relative;
+  font-size: 3em;
+}
+
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border:20px solid #333;
+  border-radius:50%;
+  margin:50px auto;
+  position: relative;
+  padding:2rem;
+  background: #FFF url('../bg.png');
+  box-shadow:
+    0 0 0 6px rgba(0,0,0,0.2),
+    inset 0 0 0 5px #FFF,
+    inset 0 0 10px #222,
+    0 0 10px rgba(0,0,0,0.3);
+}
+
+#minute-number::before {
+  content: ': ';
+}
+
+#minute-number::after {
+  content: ' :';
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px); /* account for the height of the clock hands */
+}
+
+.hand {
+  width: 50%;
+  height:4px;
+  background: #444;
+  position: absolute;
+  top:50%;
+  transition: all 0.5s;
+  transition-timing-function: ease-in-out;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+}
